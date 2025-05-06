@@ -75,7 +75,7 @@ If you encounter any issues:
 3. Verify that the Python environment has access to all required packages
 4. For any port conflicts, you can specify a different port:
    ```bash
-   streamlit run streamlit_app.py --server.port 8501
+   streamlit run streamlit_file.py --server.port 8501
    ```
 
 ## Next Steps
