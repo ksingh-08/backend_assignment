@@ -135,7 +135,8 @@ with tab1:
     for sample in sample_queries:
         if st.button(f"Try: {sample}", key=f"sample_{hash(sample)}", use_container_width=True):
             st.session_state.query = sample
-            st.experimental_rerun()
+            st.rerun()
+
 
 with tab2:
     st.header("All Support Tickets")
@@ -180,6 +181,7 @@ with tab2:
             if selected_ticket.created:
                 st.write(f"**Created:** {selected_ticket.created}")
 
+
 with tab3:
     st.header("Add New Support Ticket")
     
@@ -209,8 +211,10 @@ with tab3:
             )
             
             st.session_state.support_rag.add_ticket(new_ticket)
-            
             st.success(f"Ticket {ticket_id} added successfully!")
+            
+           
+            st.rerun() 
         elif submit_button:
             st.error("Title and Problem fields are required.")
 
